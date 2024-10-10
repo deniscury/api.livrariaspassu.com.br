@@ -26,5 +26,4 @@
     -   Renomear arquivo .env.example para .env
     -   Abra o terminal/Prompt de comando
     -   Execute o comando composer install
-    -   Execute o comando php artisan key:generate
     -   Execute o comando php artisan serve
