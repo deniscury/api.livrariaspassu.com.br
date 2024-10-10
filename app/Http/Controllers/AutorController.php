@@ -1,0 +1,112 @@
+<?php
+namespace App\Http\Controllers;
+
+use App\Models\Autor;
+use App\Models\LivroAutor;
+
+use App\Http\Resources\AutoresCollection;
+use App\Http\Resources\AutorResource;
+use App\Http\Services;
+
+use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+class AutorController extends Controller
+{
+    protected static $texto_mensagem = array('autor(a)');
+
+    public function __construct()
+    {
+        $regras = array(
+            'nome' => 'required|min:3|max:40'
+        );
+
+        $this->setRegras($regras);
+    }
+    
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $autores = new AutoresCollection(Autor::with(array('livros'))->get());
+
+        return $autores;
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $erros = Services::validar($request, $this->getRegras());
+
+        if (!empty($erros)) {
+            return Services::retorno(Response::HTTP_INTERNAL_SERVER_ERROR, 'erro_cadastro', self::$texto_mensagem, null, $erros);
+        }
+
+        $autor = Autor::create($request->all());
+
+        if($autor){
+            $autor = new AutoresCollection(array($autor));
+            return Services::retorno(Response::HTTP_CREATED, 'cadastradoa_sucesso', self::$texto_mensagem, $autor);
+        }
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show($autor)
+    {
+        $autor = Autor::with(array('livros'))->find($autor);
+
+        if ($autor){
+            return new AutorResource($autor);
+        }
+
+        return Services::retorno(Response::HTTP_NOT_FOUND, 'nao_encontradoa', self::$texto_mensagem);
+    }
+    
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, $autor)
+    {
+        $erros = Services::validar($request, $this->getRegras());
+
+        if (!empty($erros)) {
+            return Services::retorno(Response::HTTP_INTERNAL_SERVER_ERROR, 'erro_cadastro', self::$texto_mensagem, null, $erros);
+        }
+
+        $autor = Autor::find($autor);
+
+        if ($autor){
+            $autor->nome = $request->nome;
+            $autor->save();
+
+            $autor = new AutoresCollection(array($autor));
+            return Services::retorno(Response::HTTP_OK, 'alteradoa_sucesso', self::$texto_mensagem, $autor);
+        }
+
+        return Services::retorno(Response::HTTP_NOT_FOUND, 'nao_encontradoa', self::$texto_mensagem);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy($autor)
+    {
+        $livroAutor = LivroAutor::where('autor_id', $autor);
+        $livroAutor->delete();
+
+        $autor = Autor::find($autor);
+
+        if ($autor){
+            $autor->delete();
+
+            return Services::retorno(Response::HTTP_OK, 'excluidoa_sucesso', self::$texto_mensagem);
+        }
+
+        return Services::retorno(Response::HTTP_NOT_FOUND, 'nao_encontradoa', self::$texto_mensagem);
+    }
+}
