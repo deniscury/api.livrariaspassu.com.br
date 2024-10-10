@@ -21,6 +21,7 @@
 # Passo a passo
 
 -   Clonar projeto
+-   Branch livraria
 -   Navegar até a pasta raiz e execute as seguintes ações:
     -   Renomear arquivo .env.example para .env
     -   Abra o terminal/Prompt de comando
