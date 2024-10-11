@@ -36,38 +36,35 @@ Siga estes passos para configurar o projeto Livraria Spassu:
     git clone <url-do-repositorio>
     ```
 
-2. **Mudar para a Branch `livraria`**:
-
-    ```bash
-    cd <pasta-do-projeto>
-    git checkout livraria
-    ```
-
-3. **Navegar até a Pasta Raiz do Projeto**:
+2. **Navegar até a Pasta Raiz do Projeto**:
    Certifique-se de que você está na pasta raiz do projeto clonado.
 
-4. **Configurar o Arquivo de Ambiente**:
+    ```bash
+        cd <pasta-do-projeto>
+    ```
+
+3. **Configurar o Arquivo de Ambiente**:
    Renomeie o arquivo de exemplo de ambiente:
 
     ```bash
     mv .env.example .env
     ```
 
-5. **Instalar Dependências**:
+4. **Instalar Dependências**:
    Abra seu terminal ou prompt de comando e execute:
 
     ```bash
     composer install
     ```
 
-6. **Alterar hosts**:
+5. **Alterar hosts**:
    Abra o arquivo hosts (C:\Windows\System32\drivers\etc\hosts) e adicione o DNS:
 
     ```bash
     api.livrariaspassu.local       api.livrariaspassu.local
     ```
 
-7. **Executar a Aplicação**:
+6. **Executar a Aplicação**:
    Inicie o servidor de desenvolvimento local com:
     ```bash
     php artisan serve --host=api.livrariaspassu.local --port=8000
