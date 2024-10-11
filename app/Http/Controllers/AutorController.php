@@ -29,9 +29,9 @@ class AutorController extends Controller
      */
     public function index()
     {
-        $autores = new AutoresCollection(Autor::with(array('livros'))->get());
+        $autores = new AutoresCollection(Autor::all());
 
-        return $autores;
+        return Services::retorno(Response::HTTP_OK, '', self::$texto_mensagem, $autores);
     }
 
     /**
@@ -48,7 +48,7 @@ class AutorController extends Controller
         $autor = Autor::create($request->all());
 
         if($autor){
-            $autor = new AutoresCollection(array($autor));
+            $autor = new AutorResource($autor);
             return Services::retorno(Response::HTTP_CREATED, 'cadastradoa_sucesso', self::$texto_mensagem, $autor);
         }
     }
@@ -61,7 +61,9 @@ class AutorController extends Controller
         $autor = Autor::with(array('livros'))->find($autor);
 
         if ($autor){
-            return new AutorResource($autor);
+            $autor = new AutorResource($autor);
+
+            return Services::retorno(Response::HTTP_OK, '', self::$texto_mensagem, $autor);
         }
 
         return Services::retorno(Response::HTTP_NOT_FOUND, 'nao_encontradoa', self::$texto_mensagem);
@@ -75,7 +77,7 @@ class AutorController extends Controller
         $erros = Services::validar($request, $this->getRegras());
 
         if (!empty($erros)) {
-            return Services::retorno(Response::HTTP_INTERNAL_SERVER_ERROR, 'erro_cadastro', self::$texto_mensagem, null, $erros);
+            return Services::retorno(Response::HTTP_INTERNAL_SERVER_ERROR, 'erro_alterar', self::$texto_mensagem, null, $erros);
         }
 
         $autor = Autor::find($autor);
@@ -84,7 +86,7 @@ class AutorController extends Controller
             $autor->nome = $request->nome;
             $autor->save();
 
-            $autor = new AutoresCollection(array($autor));
+            $autor = new AutorResource($autor);
             return Services::retorno(Response::HTTP_OK, 'alteradoa_sucesso', self::$texto_mensagem, $autor);
         }
 

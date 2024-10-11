@@ -32,7 +32,7 @@ class LivroAssuntoController extends Controller
     {
         $livroAssuntos = new LivroAssuntosCollection(LivroAssunto::with(array('livro', 'assunto'))->get());
 
-        return $livroAssuntos;
+        return Services::retorno(Response::HTTP_OK, '', self::$texto_mensagem, $livroAssuntos);
     }
 
     /**
@@ -54,7 +54,7 @@ class LivroAssuntoController extends Controller
         $livroAssunto = LivroAssunto::create($request->all());
 
         if($livroAssunto){
-            $livroAssunto = new LivroAssuntosCollection(array($livroAssunto));
+            $livroAssunto = new LivroAssuntoResource($livroAssunto);
             return Services::retorno(Response::HTTP_CREATED, 'cadastrado_sucesso', self::$texto_mensagem, $livroAssunto);
         }
     }
@@ -64,10 +64,12 @@ class LivroAssuntoController extends Controller
      */
     public function show($livro, $assunto)
     {
-        $livroAssunto = LivroAssunto::with(array('livro', 'assunto'))->where('livro_id', $livro)->where('assunto_id', $assunto)->get();
+        $livroAssunto = LivroAssunto::with(array('livro', 'assunto'))->where('livro_id', $livro)->where('assunto_id', $assunto)->first();
 
         if ($livroAssunto){
-            return new LivroAssuntosCollection($livroAssunto);
+            $livroAssunto = new LivroAssuntoResource($livroAssunto);
+
+            return Services::retorno(Response::HTTP_OK, '', self::$texto_mensagem, $livroAssunto);
         }
 
         return Services::retorno(Response::HTTP_NOT_FOUND, 'nao_encontrado', self::$texto_mensagem);

@@ -24,11 +24,10 @@ class Services
         return $erros;
     }
     
-    public static function retorno(int $status, string $indexMensagem, array $texto_mensagem = array(), ResourceCollection $dados = null, MessageBag $erros = null){
-        $retorno = 
-            array(
-                'mensagem' => ucfirst(vsprintf(self::$mensagemRetorno[$indexMensagem], array_values($texto_mensagem)))
-            );
+    public static function retorno(int $status = 200, string $indexMensagem = '', array $texto_mensagem = array(), $dados = null, MessageBag $erros = null){
+        if (isset(self::$mensagemRetorno[$indexMensagem])){
+            $retorno['mensagem'] = ucfirst(vsprintf(self::$mensagemRetorno[$indexMensagem], array_values($texto_mensagem)));
+        }
 
         if(!is_null($dados)){
             $retorno['dados'] = $dados;

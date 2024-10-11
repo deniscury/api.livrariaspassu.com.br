@@ -30,7 +30,9 @@ class MensagemConstants
         'excluido_sucesso' => '%s excluído com sucesso',
         'excluida_sucesso' => '%s excluída com sucesso',
 
-        'erro_cadastro' => 'Erro ao cadastrar %s'
+        'erro_cadastro' => 'Erro ao cadastrar %s',
+        'erro_alterar' => 'Erro ao alterar %s',
+        'erro_excluir' => 'Erro ao excluir %s'
     );
 
     public static function getMensagensValidacao(){

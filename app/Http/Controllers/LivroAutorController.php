@@ -31,7 +31,7 @@ class LivroAutorController extends Controller
     {
         $livroAutores = new LivroAutoresCollection(LivroAutor::with(array('livro', 'autor'))->get());
 
-        return $livroAutores;
+        return Services::retorno(Response::HTTP_OK, '', self::$texto_mensagem, $livroAutores);
     }
 
     /**
@@ -53,7 +53,7 @@ class LivroAutorController extends Controller
         $livroAutor = LivroAutor::create($request->all());
 
         if($livroAutor){
-            $livroAutor = new LivroAutoresCollection(array($livroAutor));
+            $livroAutor = new LivroAutorResource($livroAutor);
             return Services::retorno(Response::HTTP_CREATED, 'cadastrado_sucesso', self::$texto_mensagem, $livroAutor);
         }
     }
@@ -63,10 +63,12 @@ class LivroAutorController extends Controller
      */
     public function show($livro, $autor)
     {
-        $livroAutor = LivroAutor::with(array('livro', 'autor'))->where('livro_id', $livro)->where('autor_id', $autor)->get();
+        $livroAutor = LivroAutor::with(array('livro', 'autor'))->where('livro_id', $livro)->where('autor_id', $autor)->first();
 
         if ($livroAutor){
-            return new LivroAutoresCollection($livroAutor);
+            $livroAutor = new LivroAutorResource($livroAutor);
+
+            return Services::retorno(Response::HTTP_OK, '', self::$texto_mensagem, $livroAutor);
         }
         return Services::retorno(Response::HTTP_NOT_FOUND, 'nao_encontrado', self::$texto_mensagem);
     }

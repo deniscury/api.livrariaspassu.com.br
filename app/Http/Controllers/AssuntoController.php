@@ -29,9 +29,9 @@ class AssuntoController extends Controller
      */
     public function index()
     {
-        $assuntos = new AssuntosCollection(Assunto::with(array('livros'))->get());
+        $assuntos = new AssuntosCollection(Assunto::all());
 
-        return $assuntos;
+        return Services::retorno(Response::HTTP_OK, '', self::$texto_mensagem, $assuntos);
     }
 
     /**
@@ -48,7 +48,7 @@ class AssuntoController extends Controller
         $assunto = Assunto::create($request->all());
 
         if($assunto){
-            $assunto = new AssuntosCollection(array($assunto));
+            $assunto = new AssuntoResource($assunto);
             return Services::retorno(Response::HTTP_CREATED, 'cadastrado_sucesso', self::$texto_mensagem, $assunto);
         }
     }
@@ -61,7 +61,9 @@ class AssuntoController extends Controller
         $assunto = Assunto::with(array('livros'))->find($assunto);
 
         if ($assunto){
-            return new AssuntoResource($assunto);
+            $assunto = new AssuntoResource($assunto);
+
+            return Services::retorno(Response::HTTP_OK, '', self::$texto_mensagem, $assunto);
         }
 
         return Services::retorno(Response::HTTP_NOT_FOUND, 'nao_encontrado', self::$texto_mensagem);
@@ -75,16 +77,16 @@ class AssuntoController extends Controller
         $erros = Services::validar($request, $this->getRegras());
 
         if (!empty($erros)) {
-            return Services::retorno(Response::HTTP_INTERNAL_SERVER_ERROR, 'erro_cadastro', self::$texto_mensagem, null, $erros);
+            return Services::retorno(Response::HTTP_INTERNAL_SERVER_ERROR, 'erro_alterar', self::$texto_mensagem, null, $erros);
         }
 
         $assunto = Assunto::find($assunto);
 
         if ($assunto){
-            $assunto->nome = $request->nome;
+            $assunto->descricao = $request->descricao;
             $assunto->save();
 
-            $assunto = new AssuntosCollection(array($assunto));
+            $assunto = new AssuntoResource($assunto);
             return Services::retorno(Response::HTTP_OK, 'alterado_sucesso', self::$texto_mensagem, $assunto);
         }
 

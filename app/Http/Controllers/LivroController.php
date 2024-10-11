@@ -34,9 +34,9 @@ class LivroController extends Controller
      */
     public function index()
     {
-        $livros = new LivrosCollection(Livro::with(array('autores', 'assuntos'))->get());
+        $livros = new LivrosCollection(Livro::all());
 
-        return $livros;
+        return Services::retorno(Response::HTTP_OK, '', self::$texto_mensagem, $livros);
     }
 
     /**
@@ -53,7 +53,7 @@ class LivroController extends Controller
         $livro = Livro::create($request->all());
 
         if($livro){
-            $livro = new LivrosCollection(array($livro));
+            $livro = new LivroResource($livro);
             return Services::retorno(Response::HTTP_CREATED, 'cadastrado_sucesso', self::$texto_mensagem, $livro);
         }
     }
@@ -63,10 +63,12 @@ class LivroController extends Controller
      */
     public function show($livro)
     {
-        $livro = Livro::find($livro);
+        $livro = Livro::with(array('autores', 'assuntos'))->find($livro);
 
         if ($livro){
-            return new LivroResource($livro);
+            $livro = new LivroResource($livro);
+
+            return Services::retorno(Response::HTTP_OK, '', self::$texto_mensagem, $livro);
         }
 
         return Services::retorno(Response::HTTP_NOT_FOUND, 'nao_encontrado', self::$texto_mensagem);
@@ -80,16 +82,19 @@ class LivroController extends Controller
         $erros = Services::validar($request, $this->getRegras());
 
         if (!empty($erros)) {
-            return Services::retorno(Response::HTTP_INTERNAL_SERVER_ERROR, 'erro_cadastro', self::$texto_mensagem, null, $erros);
+            return Services::retorno(Response::HTTP_INTERNAL_SERVER_ERROR, 'erro_alterar', self::$texto_mensagem, null, $erros);
         }
 
         $livro = Livro::with(array('autores', 'assuntos'))->find($livro);
 
         if ($livro){
-            $livro->nome = $request->nome;
+            $livro->titulo = $request->titulo;
+            $livro->editora = $request->editora;
+            $livro->edicao = $request->edicao;
+            $livro->ano_publicacao = $request->ano_publicacao;
             $livro->save();
 
-            $livro = new LivrosCollection(array($livro));
+            $livro = new LivroResource($livro);
             return Services::retorno(Response::HTTP_OK, 'alterado_sucesso', self::$texto_mensagem, $livro);
         }
 
