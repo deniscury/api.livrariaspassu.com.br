@@ -76,10 +76,6 @@ Siga estes passos para configurar o projeto Livraria Spassu:
 
 -   URL: http://api.livrariaspassu.local:8000/api
 
-## Autenticação
-
-A autenticação é feita através da chave de API, enviada no cabeçalho da requisição.
-
 ## Endpoints
 
 ### Assuntos
