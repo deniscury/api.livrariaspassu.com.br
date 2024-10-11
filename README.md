@@ -61,7 +61,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
    Abra o arquivo hosts (C:\Windows\System32\drivers\etc\hosts) e adicione o DNS:
 
     ```bash
-    api.livrariaspassu.local       api.livrariaspassu.local
+    127.0.0.1       api.livrariaspassu.local
     ```
 
 6. **Executar a Aplicação**:
