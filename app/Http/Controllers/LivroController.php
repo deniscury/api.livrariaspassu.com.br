@@ -30,13 +30,25 @@ class LivroController extends Controller
     }
     
     /**
-     * Display a listing of the resource.
+     * Lista todos os registros da tabela.
      */
     public function index()
     {
         $livros = new LivrosCollection(Livro::all());
 
         return Services::retorno(Response::HTTP_OK, '', self::$texto_mensagem, $livros);
+    }
+
+    /**
+     * Conta os registros da tabela.
+     */
+    public function quantidadeRegistros()
+    {
+        $livros = Livro::count();
+
+        $qtdLivros = array('registros' => $livros);
+
+        return Services::retorno(Response::HTTP_OK, '', self::$texto_mensagem, $qtdLivros);
     }
 
     /**

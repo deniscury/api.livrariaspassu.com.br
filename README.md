@@ -176,6 +176,21 @@ Siga estes passos para configurar o projeto Livraria Spassu:
 }
 ```
 
+#### Quantidade de Registros
+
+-   **Método:** GET
+-   **Endpoint:** /assunto/quantidade-registros
+-   **Resposta:**
+    -   `status`: 200 - OK
+
+```json
+{
+    "dados": {
+        "registros": 9
+    }
+}
+```
+
 #### Buscar
 
 -   **Método:** GET
@@ -373,6 +388,21 @@ Siga estes passos para configurar o projeto Livraria Spassu:
             }
         ]
     ]
+}
+```
+
+#### Quantidade de Registros
+
+-   **Método:** GET
+-   **Endpoint:** /autor/quantidade-registros
+-   **Resposta:**
+    -   `status`: 200 - OK
+
+```json
+{
+    "dados": {
+        "registros": 5
+    }
 }
 ```
 
@@ -582,6 +612,21 @@ Siga estes passos para configurar o projeto Livraria Spassu:
             }
         ]
     ]
+}
+```
+
+#### Quantidade de Registros
+
+-   **Método:** GET
+-   **Endpoint:** /livro/quantidade-registros
+-   **Resposta:**
+    -   `status`: 200 - OK
+
+```json
+{
+    "dados": {
+        "registros": 30
+    }
 }
 ```
 

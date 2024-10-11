@@ -25,7 +25,7 @@ class AssuntoController extends Controller
     }
     
     /**
-     * Display a listing of the resource.
+     * Lista todos os registros da tabela.
      */
     public function index()
     {
@@ -35,7 +35,19 @@ class AssuntoController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Conta os registros da tabela.
+     */
+    public function quantidadeRegistros()
+    {
+        $assuntos = Assunto::count();
+
+        $qtdAssuntos = array('registros' => $assuntos);
+
+        return Services::retorno(Response::HTTP_OK, '', self::$texto_mensagem, $qtdAssuntos);
+    }
+
+    /**
+     * Cadastrar assunto.
      */
     public function store(Request $request)
     {
@@ -54,7 +66,7 @@ class AssuntoController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Lista um registro específico.
      */
     public function show($assunto)
     {
@@ -70,7 +82,7 @@ class AssuntoController extends Controller
     }
     
     /**
-     * Update the specified resource in storage.
+     * Altera um registro específico.
      */
     public function update(Request $request, $assunto)
     {
@@ -94,7 +106,7 @@ class AssuntoController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Exclui um registro específico.
      */
     public function destroy($assunto)
     {

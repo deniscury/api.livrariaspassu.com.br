@@ -25,13 +25,25 @@ class AutorController extends Controller
     }
     
     /**
-     * Display a listing of the resource.
+     * Lista todos os registros da tabela.
      */
     public function index()
     {
         $autores = new AutoresCollection(Autor::all());
 
         return Services::retorno(Response::HTTP_OK, '', self::$texto_mensagem, $autores);
+    }
+
+    /**
+     * Conta os registros da tabela.
+     */
+    public function quantidadeRegistros()
+    {
+        $autores = Autor::count();
+
+        $qtdAutores = array('registros' => $autores);
+
+        return Services::retorno(Response::HTTP_OK, '', self::$texto_mensagem, $qtdAutores);
     }
 
     /**
