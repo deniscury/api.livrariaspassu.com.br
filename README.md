@@ -559,6 +559,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
                 "editora": "Panini Comics",
                 "edicao": 1,
                 "ano_publicacao": "1997",
+                "valor": "0,00",
                 "links": [
                     {
                         "rel": "Alterar livro",
@@ -578,6 +579,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
                 "editora": "Rocco",
                 "edicao": 1,
                 "ano_publicacao": "2007",
+                "valor": "0,00",
                 "links": [
                     {
                         "rel": "Alterar livro",
@@ -597,6 +599,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
                 "editora": "Rocco",
                 "edicao": 1,
                 "ano_publicacao": "2007",
+                "valor": "0,00",
                 "links": [
                     {
                         "rel": "Alterar livro",
@@ -645,6 +648,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
         "editora": "Panini Comics",
         "edicao": 1,
         "ano_publicacao": "1997",
+        "valor": "0,00",
         "autores": [[]],
         "assuntos": [[]],
         "links": [
@@ -678,6 +682,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
     -   `editora`: Editora
     -   `edicao`: Número da edição
     -   `ano_publicacao`: Ano de publicação do livro
+    -   `valor`: Valor do livro
 -   **Resposta:**
     -   `status`: 201 - CREATED ou 500 - INTERNAL SERVER ERROR
 
@@ -690,6 +695,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
         "editora": "Bloomsbury Publishing",
         "edicao": 2,
         "ano_publicacao": 1998,
+        "valor": "0,00",
         "links": [
             {
                 "rel": "Alterar livro",
@@ -724,6 +730,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
     -   `editora`: Editora
     -   `edicao`: Número da edição
     -   `ano_publicacao`: Ano de publicação do livro
+    -   `valor`: Valor do livro
 -   **Resposta:**
     -   `status`: 200 - OK ou 500 - INTERNAL SERVER ERROR
 
@@ -736,6 +743,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
         "editora": "Bloomsbury Publishing",
         "edicao": 3,
         "ano_publicacao": 1999,
+        "valor": "0,00",
         "autores": [[]],
         "assuntos": [[]],
         "links": [
