@@ -11,6 +11,7 @@ class MensagemConstants
         'integer' => 'O campo :attribute deve ser um número inteiro.',
         'decimal' => 'O campo :attribute deve ser um número decimal.',
         'numeric' => 'O campo :attribute deve ser um número.',
+        'between' => 'O campo :attribute deve conter um número entre :min e :max.',
         'exists' => 'O :attribute :input é inválido.',
         'unique' => 'Identificamos que o registro já existe.'
     );
