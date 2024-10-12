@@ -24,7 +24,7 @@ class LivroController extends Controller
             'editora' => 'required|min:3|max:40',
             'edicao' => 'required|integer|min:0',
             'ano_publicacao' => 'required|min:4|max:4',
-            'valor' => 'required|decimal:2'
+            'valor' => 'required|numeric'
         );
 
         $this->setRegras($regras);

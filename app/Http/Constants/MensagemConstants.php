@@ -10,6 +10,7 @@ class MensagemConstants
         'max' => 'O campo :attribute deve conter no máximo :max caracteres.',
         'integer' => 'O campo :attribute deve ser um número inteiro.',
         'decimal' => 'O campo :attribute deve ser um número decimal.',
+        'numeric' => 'O campo :attribute deve ser um número.',
         'exists' => 'O :attribute :input é inválido.',
         'unique' => 'Identificamos que o registro já existe.'
     );
