@@ -47,7 +47,7 @@ class AutorController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Cadastrar autor(a).
      */
     public function store(Request $request)
     {
@@ -66,7 +66,7 @@ class AutorController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Lista um registro específico.
      */
     public function show($autor)
     {
@@ -82,7 +82,7 @@ class AutorController extends Controller
     }
     
     /**
-     * Update the specified resource in storage.
+     * Altera um registro específico.
      */
     public function update(Request $request, $autor)
     {
@@ -106,7 +106,7 @@ class AutorController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Exclui um registro específico.
      */
     public function destroy($autor)
     {

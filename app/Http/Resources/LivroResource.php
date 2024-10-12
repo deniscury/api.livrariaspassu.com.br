@@ -20,6 +20,7 @@ class LivroResource extends JsonResource
             'editora' => $this->editora,
             'edicao' => $this->edicao,
             'ano_publicacao' => $this->ano_publicacao,
+            'valor' => number_format($this->valor, 2),
             'autores' => new AutoresCollection($this->whenLoaded('autores')),
             'assuntos' => new AssuntosCollection($this->whenLoaded('assuntos')),
             'links' => array(

@@ -26,7 +26,7 @@ class LivroAssuntoController extends Controller
     }
     
     /**
-     * Display a listing of the resource.
+     * Lista todos os registros da tabela.
      */
     public function index()
     {
@@ -36,7 +36,7 @@ class LivroAssuntoController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Cadastrar vínculo de livro e assunto.
      */
     public function store(Request $request)
     {
@@ -60,14 +60,24 @@ class LivroAssuntoController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Lista um registro específico.
      */
     public function show($livro, $assunto)
     {
-        $livroAssunto = LivroAssunto::with(array('livro', 'assunto'))->where('livro_id', $livro)->where('assunto_id', $assunto)->first();
+        $livroAssunto = LivroAssunto::with(array('livro', 'assunto'));
+        
+        if($livro != 0){
+            $livroAssunto = $livroAssunto->where('livro_id', $livro);
+        }
+
+        if($assunto != 0){
+            $livroAssunto = $livroAssunto->where('assunto_id', $assunto);
+        }
+
+        $livroAssunto = $livroAssunto->get();
 
         if ($livroAssunto){
-            $livroAssunto = new LivroAssuntoResource($livroAssunto);
+            $livroAssunto = new LivroAssuntosCollection(new LivroAssuntoResource($livroAssunto));
 
             return Services::retorno(Response::HTTP_OK, '', self::$texto_mensagem, $livroAssunto);
         }
@@ -76,7 +86,7 @@ class LivroAssuntoController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Exclui um registro específico.
      */
     public function destroy($livro, $assunto)
     {

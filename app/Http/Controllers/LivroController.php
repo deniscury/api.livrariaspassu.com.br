@@ -52,7 +52,7 @@ class LivroController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Cadastrar livro.
      */
     public function store(Request $request)
     {
@@ -71,7 +71,7 @@ class LivroController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Lista um registro específico.
      */
     public function show($livro)
     {
@@ -87,7 +87,7 @@ class LivroController extends Controller
     }
     
     /**
-     * Update the specified resource in storage.
+     * Altera um registro específico.
      */
     public function update(Request $request, $livro)
     {
@@ -104,6 +104,7 @@ class LivroController extends Controller
             $livro->editora = $request->editora;
             $livro->edicao = $request->edicao;
             $livro->ano_publicacao = $request->ano_publicacao;
+            $livro->valor = $request->valor;
             $livro->save();
 
             $livro = new LivroResource($livro);
@@ -114,7 +115,7 @@ class LivroController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Exclui um registro específico.
      */
     public function destroy($livro)
     {

@@ -63,10 +63,20 @@ class LivroAutorController extends Controller
      */
     public function show($livro, $autor)
     {
-        $livroAutor = LivroAutor::with(array('livro', 'autor'))->where('livro_id', $livro)->where('autor_id', $autor)->first();
+        $livroAutor = LivroAutor::with(array('livro', 'autor'));
+        
+        if($livro != 0){
+            $livroAutor = $livroAutor->where('livro_id', $livro);
+        }
+
+        if($autor != 0){
+            $livroAutor = $livroAutor->where('autor_id', $autor);
+        }
+
+        $livroAutor = $livroAutor->get();
 
         if ($livroAutor){
-            $livroAutor = new LivroAutorResource($livroAutor);
+            $livroAutor = new LivroAutoresCollection(new LivroAutorResource($livroAutor));
 
             return Services::retorno(Response::HTTP_OK, '', self::$texto_mensagem, $livroAutor);
         }
