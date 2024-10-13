@@ -33,6 +33,17 @@ class AutorController extends Controller
 
         return Services::retorno(Response::HTTP_OK, '', self::$texto_mensagem, $autores);
     }
+    
+    /**
+     * Lista de livros agrupados por autor.
+     */
+    public function livrosPorAutor(Request $request)
+    {
+        $filtros = $request->all();
+        $livrosPorAutores = new AutoresCollection(Autor::livrosPorAutor($filtros));
+
+        return Services::retorno(Response::HTTP_OK, '', self::$texto_mensagem, $livrosPorAutores);
+    }
 
     /**
      * Conta os registros da tabela.

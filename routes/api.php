@@ -59,6 +59,13 @@ Route::prefix('autor')->group(function(){
         )
     )->name('autor.index');
 
+    Route::post('livros', 
+        array(
+            AutorController::class,
+            'livrosPorAutor'
+        )
+    )->name('autor.livros');
+
     Route::get('quantidade-registros', 
         array(
             AutorController::class,

@@ -93,83 +93,23 @@ Siga estes passos para configurar o projeto Livraria Spassu:
         [
             {
                 "id": 1,
-                "descricao": "Mangá",
-                "links": [
-                    {
-                        "rel": "Alterar assunto",
-                        "type": "PATCH",
-                        "url": "http://api.livrariaspassu.local:8000/api/assunto/1"
-                    },
-                    {
-                        "rel": "Excluir assunto",
-                        "type": "DELETE",
-                        "url": "http://api.livrariaspassu.local:8000/api/assunto/1"
-                    }
-                ]
+                "descricao": "Mangá"
             },
             {
                 "id": 2,
-                "descricao": "Quadrinho",
-                "links": [
-                    {
-                        "rel": "Alterar assunto",
-                        "type": "PATCH",
-                        "url": "http://api.livrariaspassu.local:8000/api/assunto/2"
-                    },
-                    {
-                        "rel": "Excluir assunto",
-                        "type": "DELETE",
-                        "url": "http://api.livrariaspassu.local:8000/api/assunto/2"
-                    }
-                ]
+                "descricao": "Quadrinho"
             },
             {
                 "id": 3,
-                "descricao": "Drama",
-                "links": [
-                    {
-                        "rel": "Alterar assunto",
-                        "type": "PATCH",
-                        "url": "http://api.livrariaspassu.local:8000/api/assunto/3"
-                    },
-                    {
-                        "rel": "Excluir assunto",
-                        "type": "DELETE",
-                        "url": "http://api.livrariaspassu.local:8000/api/assunto/3"
-                    }
-                ]
+                "descricao": "Drama"
             },
             {
                 "id": 4,
-                "descricao": "Aventura",
-                "links": [
-                    {
-                        "rel": "Alterar assunto",
-                        "type": "PATCH",
-                        "url": "http://api.livrariaspassu.local:8000/api/assunto/4"
-                    },
-                    {
-                        "rel": "Excluir assunto",
-                        "type": "DELETE",
-                        "url": "http://api.livrariaspassu.local:8000/api/assunto/4"
-                    }
-                ]
+                "descricao": "Aventura"
             },
             {
                 "id": 6,
-                "descricao": "Suspense",
-                "links": [
-                    {
-                        "rel": "Alterar assunto",
-                        "type": "PATCH",
-                        "url": "http://api.livrariaspassu.local:8000/api/assunto/6"
-                    },
-                    {
-                        "rel": "Excluir assunto",
-                        "type": "DELETE",
-                        "url": "http://api.livrariaspassu.local:8000/api/assunto/6"
-                    }
-                ]
+                "descricao": "Suspense"
             }
         ]
     ]
@@ -203,19 +143,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
     "dados": {
         "id": 5,
         "descricao": "Terror",
-        "livros": [[]],
-        "links": [
-            {
-                "rel": "Alterar assunto",
-                "type": "PATCH",
-                "url": "http://api.livrariaspassu.local:8000/api/assunto/5"
-            },
-            {
-                "rel": "Excluir assunto",
-                "type": "DELETE",
-                "url": "http://api.livrariaspassu.local:8000/api/assunto/5"
-            }
-        ]
+        "livros": [[]]
     }
 }
 ```
@@ -240,19 +168,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
     "mensagem": "Assunto cadastrado com sucesso",
     "dados": {
         "id": 9,
-        "descricao": "Comédia",
-        "links": [
-            {
-                "rel": "Alterar assunto",
-                "type": "PATCH",
-                "url": "http://api.livrariaspassu.local:8000/api/assunto/9"
-            },
-            {
-                "rel": "Excluir assunto",
-                "type": "DELETE",
-                "url": "http://api.livrariaspassu.local:8000/api/assunto/9"
-            }
-        ]
+        "descricao": "Comédia"
     }
 }
 ```
@@ -280,19 +196,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
     "mensagem": "Assunto alterado com sucesso",
     "dados": {
         "id": 8,
-        "descricao": "Poesia",
-        "links": [
-            {
-                "rel": "Alterar assunto",
-                "type": "PATCH",
-                "url": "http://api.livrariaspassu.local:8000/api/assunto/8"
-            },
-            {
-                "rel": "Excluir assunto",
-                "type": "DELETE",
-                "url": "http://api.livrariaspassu.local:8000/api/assunto/8"
-            }
-        ]
+        "descricao": "Poesia"
     }
 }
 ```
@@ -340,50 +244,86 @@ Siga estes passos para configurar o projeto Livraria Spassu:
         [
             {
                 "id": 2,
-                "nome": "J. K. Rowlling",
-                "links": [
-                    {
-                        "rel": "Alterar autor",
-                        "type": "PATCH",
-                        "url": "http://api.livrariaspassu.local:8000/api/autor/2"
-                    },
-                    {
-                        "rel": "Excluir autor",
-                        "type": "DELETE",
-                        "url": "http://api.livrariaspassu.local:8000/api/autor/2"
-                    }
-                ]
+                "nome": "J. K. Rowlling"
             },
             {
                 "id": 3,
-                "nome": "Rick Riordan",
-                "links": [
-                    {
-                        "rel": "Alterar autor",
-                        "type": "PATCH",
-                        "url": "http://api.livrariaspassu.local:8000/api/autor/3"
-                    },
-                    {
-                        "rel": "Excluir autor",
-                        "type": "DELETE",
-                        "url": "http://api.livrariaspassu.local:8000/api/autor/3"
-                    }
-                ]
+                "nome": "Rick Riordan"
             },
             {
                 "id": 4,
-                "nome": "Masashi Kishimoto",
-                "links": [
-                    {
-                        "rel": "Alterar autor",
-                        "type": "PATCH",
-                        "url": "http://api.livrariaspassu.local:8000/api/autor/4"
-                    },
-                    {
-                        "rel": "Excluir autor",
-                        "type": "DELETE",
-                        "url": "http://api.livrariaspassu.local:8000/api/autor/4"
-                    }
+                "nome": "Masashi Kishimoto"
+            }
+        ]
+    ]
+}
+```
+
+#### Livros por autores
+
+-   **Método:** POST
+-   **Endpoint:** /autor/livros
+-   **Resposta:**
+    -   `status`: 200 - OK
+
+```json
+{
+    "dados": [
+        [
+            {
+                "id": 22,
+                "nome": "Eiichiro Oda",
+                "livros": [
+                    [
+                        {
+                            "id": 1,
+                            "titulo": "One Piece",
+                            "editora": "Panini Comics",
+                            "edicao": 1,
+                            "ano_publicacao": "1997",
+                            "valor": "15,00",
+                            "assuntos": [
+                                [
+                                    {
+                                        "id": 1,
+                                        "descricao": "Mangás"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "descricao": "Quadrinho"
+                                    },
+                                    {
+                                        "id": 4,
+                                        "descricao": "Aventura"
+                                    }
+                                ]
+                            ]
+                        }
+                    ]
+                ]
+            },
+            {
+                "id": 2,
+                "nome": "J. K. Rowlling",
+                "livros": [
+                    [
+                        {
+                            "id": 4,
+                            "titulo": "Harry Potter e a pedra filosofal",
+                            "editora": "Bloomsbury Publishing",
+                            "edicao": 1,
+                            "ano_publicacao": "1997",
+                            "valor": "50,00",
+                            "assuntos": [
+                                [
+                                    {
+                                        "id": 4,
+                                        "descricao": "Aventura"
+                                    }
+                                ]
+                            ]
+                        }
+                    ]
                 ]
             }
         ]
@@ -418,19 +358,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
     "dados": {
         "id": 22,
         "nome": "Eiichiro Oda",
-        "livros": [[]],
-        "links": [
-            {
-                "rel": "Alterar autor",
-                "type": "PATCH",
-                "url": "http://api.livrariaspassu.local:8000/api/autor/22"
-            },
-            {
-                "rel": "Excluir autor",
-                "type": "DELETE",
-                "url": "http://api.livrariaspassu.local:8000/api/autor/22"
-            }
-        ]
+        "livros": [[]]
     }
 }
 ```
@@ -455,19 +383,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
     "mensagem": "Autor(a) cadastrado(a) com sucesso",
     "dados": {
         "id": 25,
-        "nome": "Cecília Meireles",
-        "links": [
-            {
-                "rel": "Alterar autor",
-                "type": "PATCH",
-                "url": "http://api.livrariaspassu.local:8000/api/autor/25"
-            },
-            {
-                "rel": "Excluir autor",
-                "type": "DELETE",
-                "url": "http://api.livrariaspassu.local:8000/api/autor/25"
-            }
-        ]
+        "nome": "Cecília Meireles"
     }
 }
 ```
@@ -495,19 +411,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
     "mensagem": "Autor(a) alterado(a) com sucesso",
     "dados": {
         "id": 5,
-        "nome": "Gege Akutami",
-        "links": [
-            {
-                "rel": "Alterar autor",
-                "type": "PATCH",
-                "url": "http://api.livrariaspassu.local:8000/api/autor/5"
-            },
-            {
-                "rel": "Excluir autor",
-                "type": "DELETE",
-                "url": "http://api.livrariaspassu.local:8000/api/autor/5"
-            }
-        ]
+        "nome": "Gege Akutami"
     }
 }
 ```
@@ -559,19 +463,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
                 "editora": "Panini Comics",
                 "edicao": 1,
                 "ano_publicacao": "1997",
-                "valor": "0,00",
-                "links": [
-                    {
-                        "rel": "Alterar livro",
-                        "type": "PATCH",
-                        "url": "http://api.livrariaspassu.local:8000/api/livro/1"
-                    },
-                    {
-                        "rel": "Excluir livro",
-                        "type": "DELETE",
-                        "url": "http://api.livrariaspassu.local:8000/api/livro/1"
-                    }
-                ]
+                "valor": "0,00"
             },
             {
                 "id": 2,
@@ -579,19 +471,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
                 "editora": "Rocco",
                 "edicao": 1,
                 "ano_publicacao": "2007",
-                "valor": "0,00",
-                "links": [
-                    {
-                        "rel": "Alterar livro",
-                        "type": "PATCH",
-                        "url": "http://api.livrariaspassu.local:8000/api/livro/2"
-                    },
-                    {
-                        "rel": "Excluir livro",
-                        "type": "DELETE",
-                        "url": "http://api.livrariaspassu.local:8000/api/livro/2"
-                    }
-                ]
+                "valor": "0,00"
             },
             {
                 "id": 3,
@@ -599,19 +479,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
                 "editora": "Rocco",
                 "edicao": 1,
                 "ano_publicacao": "2007",
-                "valor": "0,00",
-                "links": [
-                    {
-                        "rel": "Alterar livro",
-                        "type": "PATCH",
-                        "url": "http://api.livrariaspassu.local:8000/api/livro/3"
-                    },
-                    {
-                        "rel": "Excluir livro",
-                        "type": "DELETE",
-                        "url": "http://api.livrariaspassu.local:8000/api/livro/3"
-                    }
-                ]
+                "valor": "0,00"
             }
         ]
     ]
@@ -650,19 +518,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
         "ano_publicacao": "1997",
         "valor": "0,00",
         "autores": [[]],
-        "assuntos": [[]],
-        "links": [
-            {
-                "rel": "Alterar livro",
-                "type": "PATCH",
-                "url": "http://api.livrariaspassu.local:8000/api/livro/1"
-            },
-            {
-                "rel": "Excluir livro",
-                "type": "DELETE",
-                "url": "http://api.livrariaspassu.local:8000/api/livro/1"
-            }
-        ]
+        "assuntos": [[]]
     }
 }
 ```
@@ -695,19 +551,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
         "editora": "Bloomsbury Publishing",
         "edicao": 2,
         "ano_publicacao": 1998,
-        "valor": "0,00",
-        "links": [
-            {
-                "rel": "Alterar livro",
-                "type": "PATCH",
-                "url": "http://api.livrariaspassu.local:8000/api/livro/5"
-            },
-            {
-                "rel": "Excluir livro",
-                "type": "DELETE",
-                "url": "http://api.livrariaspassu.local:8000/api/livro/5"
-            }
-        ]
+        "valor": "0,00"
     }
 }
 ```
@@ -745,19 +589,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
         "ano_publicacao": 1999,
         "valor": "0,00",
         "autores": [[]],
-        "assuntos": [[]],
-        "links": [
-            {
-                "rel": "Alterar livro",
-                "type": "PATCH",
-                "url": "http://api.livrariaspassu.local:8000/api/livro/6"
-            },
-            {
-                "rel": "Excluir livro",
-                "type": "DELETE",
-                "url": "http://api.livrariaspassu.local:8000/api/livro/6"
-            }
-        ]
+        "assuntos": [[]]
     }
 }
 ```
@@ -811,43 +643,12 @@ Siga estes passos para configurar o projeto Livraria Spassu:
                     "titulo": "One Piece",
                     "editora": "Panini Comics",
                     "edicao": 1,
-                    "ano_publicacao": "1997",
-                    "links": [
-                        {
-                            "rel": "Alterar livro",
-                            "type": "PATCH",
-                            "url": "http://api.livrariaspassu.local:8000/api/livro/1"
-                        },
-                        {
-                            "rel": "Excluir livro",
-                            "type": "DELETE",
-                            "url": "http://api.livrariaspassu.local:8000/api/livro/1"
-                        }
-                    ]
+                    "ano_publicacao": "1997"
                 },
                 "assunto": {
                     "id": 1,
-                    "descricao": "Mangá",
-                    "links": [
-                        {
-                            "rel": "Alterar assunto",
-                            "type": "PATCH",
-                            "url": "http://api.livrariaspassu.local:8000/api/assunto/1"
-                        },
-                        {
-                            "rel": "Excluir assunto",
-                            "type": "DELETE",
-                            "url": "http://api.livrariaspassu.local:8000/api/assunto/1"
-                        }
-                    ]
-                },
-                "links": [
-                    {
-                        "rel": "Excluir vínculo",
-                        "type": "DELETE",
-                        "url": "http://api.livrariaspassu.local:8000/api/livro-assunto/livro/1/assunto/1"
-                    }
-                ]
+                    "descricao": "Mangá"
+                }
             },
             {
                 "livro_id": 1,
@@ -857,43 +658,12 @@ Siga estes passos para configurar o projeto Livraria Spassu:
                     "titulo": "One Piece",
                     "editora": "Panini Comics",
                     "edicao": 1,
-                    "ano_publicacao": "1997",
-                    "links": [
-                        {
-                            "rel": "Alterar livro",
-                            "type": "PATCH",
-                            "url": "http://api.livrariaspassu.local:8000/api/livro/1"
-                        },
-                        {
-                            "rel": "Excluir livro",
-                            "type": "DELETE",
-                            "url": "http://api.livrariaspassu.local:8000/api/livro/1"
-                        }
-                    ]
+                    "ano_publicacao": "1997"
                 },
                 "assunto": {
                     "id": 4,
-                    "descricao": "Aventura",
-                    "links": [
-                        {
-                            "rel": "Alterar assunto",
-                            "type": "PATCH",
-                            "url": "http://api.livrariaspassu.local:8000/api/assunto/4"
-                        },
-                        {
-                            "rel": "Excluir assunto",
-                            "type": "DELETE",
-                            "url": "http://api.livrariaspassu.local:8000/api/assunto/4"
-                        }
-                    ]
-                },
-                "links": [
-                    {
-                        "rel": "Excluir vínculo",
-                        "type": "DELETE",
-                        "url": "http://api.livrariaspassu.local:8000/api/livro-assunto/livro/1/assunto/4"
-                    }
-                ]
+                    "descricao": "Aventura"
+                }
             },
             {
                 "livro_id": 2,
@@ -903,43 +673,12 @@ Siga estes passos para configurar o projeto Livraria Spassu:
                     "titulo": "As vantagens de ser invísivel",
                     "editora": "Rocco",
                     "edicao": 1,
-                    "ano_publicacao": "2007",
-                    "links": [
-                        {
-                            "rel": "Alterar livro",
-                            "type": "PATCH",
-                            "url": "http://api.livrariaspassu.local:8000/api/livro/2"
-                        },
-                        {
-                            "rel": "Excluir livro",
-                            "type": "DELETE",
-                            "url": "http://api.livrariaspassu.local:8000/api/livro/2"
-                        }
-                    ]
+                    "ano_publicacao": "2007"
                 },
                 "assunto": {
                     "id": 3,
-                    "descricao": "Drama",
-                    "links": [
-                        {
-                            "rel": "Alterar assunto",
-                            "type": "PATCH",
-                            "url": "http://api.livrariaspassu.local:8000/api/assunto/3"
-                        },
-                        {
-                            "rel": "Excluir assunto",
-                            "type": "DELETE",
-                            "url": "http://api.livrariaspassu.local:8000/api/assunto/3"
-                        }
-                    ]
-                },
-                "links": [
-                    {
-                        "rel": "Excluir vínculo",
-                        "type": "DELETE",
-                        "url": "http://api.livrariaspassu.local:8000/api/livro-assunto/livro/2/assunto/3"
-                    }
-                ]
+                    "descricao": "Drama"
+                }
             }
         ]
     ]
@@ -963,43 +702,12 @@ Siga estes passos para configurar o projeto Livraria Spassu:
             "titulo": "One Piece",
             "editora": "Panini Comics",
             "edicao": 1,
-            "ano_publicacao": "1997",
-            "links": [
-                {
-                    "rel": "Alterar livro",
-                    "type": "PATCH",
-                    "url": "http://api.livrariaspassu.local:8000/api/livro/1"
-                },
-                {
-                    "rel": "Excluir livro",
-                    "type": "DELETE",
-                    "url": "http://api.livrariaspassu.local:8000/api/livro/1"
-                }
-            ]
+            "ano_publicacao": "1997"
         },
         "assunto": {
             "id": 1,
-            "descricao": "Mangá",
-            "links": [
-                {
-                    "rel": "Alterar assunto",
-                    "type": "PATCH",
-                    "url": "http://api.livrariaspassu.local:8000/api/assunto/1"
-                },
-                {
-                    "rel": "Excluir assunto",
-                    "type": "DELETE",
-                    "url": "http://api.livrariaspassu.local:8000/api/assunto/1"
-                }
-            ]
-        },
-        "links": [
-            {
-                "rel": "Excluir vínculo",
-                "type": "DELETE",
-                "url": "http://api.livrariaspassu.local:8000/api/livro-assunto/livro/1/assunto/1"
-            }
-        ]
+            "descricao": "Mangá"
+        }
     }
 }
 ```
@@ -1025,14 +733,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
     "mensagem": "Vínculo cadastrado com sucesso",
     "dados": {
         "livro_id": 4,
-        "assunto_id": 4,
-        "links": [
-            {
-                "rel": "Excluir vínculo",
-                "type": "DELETE",
-                "url": "http://api.livrariaspassu.local:8000/api/livro-assunto/livro/4/assunto/4"
-            }
-        ]
+        "assunto_id": 4
     }
 }
 ```
@@ -1086,43 +787,12 @@ Siga estes passos para configurar o projeto Livraria Spassu:
                     "titulo": "One Piece",
                     "editora": "Panini Comics",
                     "edicao": 1,
-                    "ano_publicacao": "1997",
-                    "links": [
-                        {
-                            "rel": "Alterar livro",
-                            "type": "PATCH",
-                            "url": "http://api.livrariaspassu.local:8000/api/livro/1"
-                        },
-                        {
-                            "rel": "Excluir livro",
-                            "type": "DELETE",
-                            "url": "http://api.livrariaspassu.local:8000/api/livro/1"
-                        }
-                    ]
+                    "ano_publicacao": "1997"
                 },
                 "autor": {
                     "id": 22,
-                    "nome": "Eiichiro Oda",
-                    "links": [
-                        {
-                            "rel": "Alterar autor",
-                            "type": "PATCH",
-                            "url": "http://api.livrariaspassu.local:8000/api/autor/22"
-                        },
-                        {
-                            "rel": "Excluir autor",
-                            "type": "DELETE",
-                            "url": "http://api.livrariaspassu.local:8000/api/autor/22"
-                        }
-                    ]
-                },
-                "links": [
-                    {
-                        "rel": "Excluir vínculo",
-                        "type": "DELETE",
-                        "url": "http://api.livrariaspassu.local:8000/api/livro-autor/livro/1/autor/22"
-                    }
-                ]
+                    "nome": "Eiichiro Oda"
+                }
             }
         ]
     ]
@@ -1146,43 +816,12 @@ Siga estes passos para configurar o projeto Livraria Spassu:
             "titulo": "One Piece",
             "editora": "Panini Comics",
             "edicao": 1,
-            "ano_publicacao": "1997",
-            "links": [
-                {
-                    "rel": "Alterar livro",
-                    "type": "PATCH",
-                    "url": "http://api.livrariaspassu.local:8000/api/livro/1"
-                },
-                {
-                    "rel": "Excluir livro",
-                    "type": "DELETE",
-                    "url": "http://api.livrariaspassu.local:8000/api/livro/1"
-                }
-            ]
+            "ano_publicacao": "1997"
         },
         "autor": {
             "id": 22,
-            "nome": "Eiichiro Oda",
-            "links": [
-                {
-                    "rel": "Alterar autor",
-                    "type": "PATCH",
-                    "url": "http://api.livrariaspassu.local:8000/api/autor/22"
-                },
-                {
-                    "rel": "Excluir autor",
-                    "type": "DELETE",
-                    "url": "http://api.livrariaspassu.local:8000/api/autor/22"
-                }
-            ]
-        },
-        "links": [
-            {
-                "rel": "Excluir vínculo",
-                "type": "DELETE",
-                "url": "http://api.livrariaspassu.local:8000/api/livro-autor/livro/1/autor/22"
-            }
-        ]
+            "nome": "Eiichiro Oda"
+        }
     }
 }
 ```
@@ -1208,14 +847,7 @@ Siga estes passos para configurar o projeto Livraria Spassu:
     "mensagem": "Vínculo cadastrado com sucesso",
     "dados": {
         "livro_id": 3,
-        "autor_id": 10,
-        "links": [
-            {
-                "rel": "Excluir vínculo",
-                "type": "DELETE",
-                "url": "http://api.livrariaspassu.local:8000/api/livro-autor/livro/3/autor/10"
-            }
-        ]
+        "autor_id": 10
     }
 }
 ```

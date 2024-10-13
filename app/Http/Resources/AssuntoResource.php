@@ -17,19 +17,7 @@ class AssuntoResource extends JsonResource
         return array(
             'id' => $this->id,
             'descricao' => $this->descricao,
-            'livros' => new LivrosCollection($this->whenLoaded('livros')),
-            'links' => array(
-                array(
-                    'rel' => 'Alterar assunto',
-                    'type' => 'PATCH',
-                    'url' => route('assunto.update', $this->id)
-                ),
-                array(
-                    'rel' => 'Excluir assunto',
-                    'type' => 'DELETE',
-                    'url' => route('assunto.destroy', $this->id)
-                )
-            )
+            'livros' => new LivrosCollection($this->whenLoaded('livros'))
         );
     }
 }

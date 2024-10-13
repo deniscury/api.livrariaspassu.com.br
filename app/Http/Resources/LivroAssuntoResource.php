@@ -18,14 +18,7 @@ class LivroAssuntoResource extends JsonResource
             'livro_id' => $this->livro_id,
             'assunto_id' => $this->assunto_id,
             'livro' => new LivroResource($this->whenLoaded('livro')),
-            'assunto' => new AssuntoResource($this->whenLoaded('assunto')),
-            'links' => array(
-                array(
-                    'rel' => 'Excluir vínculo',
-                    'type' => 'DELETE',
-                    'url' => route('livro-assunto.destroy', array($this->livro_id, $this->assunto_id))
-                )
-            )
+            'assunto' => new AssuntoResource($this->whenLoaded('assunto'))
         );
     }
 }

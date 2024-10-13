@@ -17,19 +17,7 @@ class AutorResource extends JsonResource
         return array(
             'id' => $this->id,
             'nome' => $this->nome,
-            'livros' => new LivrosCollection($this->whenLoaded('livros')),
-            'links' => array(
-                array(
-                    'rel' => 'Alterar autor',
-                    'type' => 'PATCH',
-                    'url' => route('autor.update', $this->id)
-                ),
-                array(
-                    'rel' => 'Excluir autor',
-                    'type' => 'DELETE',
-                    'url' => route('autor.destroy', $this->id)
-                )
-            )
+            'livros' => new LivrosCollection($this->whenLoaded('livros'))
         );
     }
 }

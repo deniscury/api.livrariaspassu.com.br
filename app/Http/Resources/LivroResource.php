@@ -22,19 +22,7 @@ class LivroResource extends JsonResource
             'ano_publicacao' => $this->ano_publicacao,
             'valor' => number_format($this->valor, 2, ',', '.'),
             'autores' => new AutoresCollection($this->whenLoaded('autores')),
-            'assuntos' => new AssuntosCollection($this->whenLoaded('assuntos')),
-            'links' => array(
-                array(
-                    'rel' => 'Alterar livro',
-                    'type' => 'PATCH',
-                    'url' => route('livro.update', $this->id)
-                ),
-                array(
-                    'rel' => 'Excluir livro',
-                    'type' => 'DELETE',
-                    'url' => route('livro.destroy', $this->id)
-                )
-            )
+            'assuntos' => new AssuntosCollection($this->whenLoaded('assuntos'))
         );
     }
 }

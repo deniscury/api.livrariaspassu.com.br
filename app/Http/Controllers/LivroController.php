@@ -9,7 +9,7 @@ use App\Models\LivroAutor;
 use App\Http\Resources\LivroResource;
 use App\Http\Resources\LivrosCollection;
 use App\Http\Services;
-
+use App\Models\Autor;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -39,6 +39,7 @@ class LivroController extends Controller
 
         return Services::retorno(Response::HTTP_OK, '', self::$texto_mensagem, $livros);
     }
+
 
     /**
      * Conta os registros da tabela.
