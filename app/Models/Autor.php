@@ -51,8 +51,8 @@ class Autor extends Model
                     $query->whereBetween('valor', array($valorInicio, $valorFim));
                 }
             )
-            ->when(isset($filtros['autor_id']), function ($query) use ($filtros) {
-                $query->where('autor_id', $filtros['autor_id']);
+            ->when(isset($filtros['autor']), function ($query) use ($filtros) {
+                $query->where('nome', 'like', '%' . $filtros['autor'] . '%');
             });
 
         return $retorno->get();
