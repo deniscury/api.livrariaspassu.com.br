@@ -23,7 +23,7 @@ class LivroController extends Controller
             'titulo' => 'required|min:3|max:40',
             'editora' => 'required|min:3|max:40',
             'edicao' => 'required|integer|min:0',
-            'ano_publicacao' => 'required|min:4|max:4',
+            'ano_publicacao' => 'required|date_format:"Y"|min:4|max:4',
             'valor' => 'required|numeric|between:0.01,99999999999.99'
         );
 

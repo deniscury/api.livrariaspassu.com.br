@@ -13,7 +13,8 @@ class MensagemConstants
         'numeric' => 'O campo :attribute deve ser um número.',
         'between' => 'O campo :attribute deve conter um número entre :min e :max.',
         'exists' => 'O :attribute :input é inválido.',
-        'unique' => 'Identificamos que o registro já existe.'
+        'unique' => 'Identificamos que o registro já existe.',
+        'date_format' => 'O campo :attribute está no formato incorreto.'
     );
 
     const MENSAGENS_RETORNO = array(
