@@ -96,7 +96,7 @@ Route::prefix('autor')->group(function(){
 
     Route::delete('{assunto}', 
         array(
-            AssuntoController::class,
+            AutorController::class,
             'destroy'
         )
     )->name('autor.destroy');
